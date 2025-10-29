@@ -1,0 +1,15 @@
+{
+    "name": "acf/counter-group",
+    "title": "Crest Counters Block",
+    "description": "Columns block featuring stat counters.",
+    "category": "postali-blocks",
+    "icon": "smiley",
+    "keywords": ["counters", "stats"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "counter-group.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

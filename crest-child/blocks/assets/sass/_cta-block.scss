@@ -1,0 +1,119 @@
+.cta-block {
+    background: #EBEBEB;
+    
+    &#slim {
+        .container {
+            .columns {
+                align-items: flex-end;
+    
+                .column-75 {
+                    h2 {
+                        color:#001242;
+                        line-height: 100%;
+                    }
+
+                    @include respond(tab-land) {
+                        width: 100%;
+                    }
+                }
+            
+                .column-25 {
+                    justify-content: flex-end;
+
+                    @include respond(tab-land) {
+                        width: 100%;
+                        margin-top: 30px;
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+    }
+
+    &#full {
+        .container {
+            .columns {    
+                .column-75 {
+                    padding:70px 120px;
+                    background:$white;
+                    border-radius: 10px;
+
+                    @include respond(tab-land) {
+                        width: 100%;
+                    }
+
+                    @include respond(tab-port) {
+                        padding:40px 80px
+                    }
+
+                    @include respond(phone) {
+                        padding: 50px;
+                    }
+
+                    h2 {
+                        color:#001242;
+                        line-height: 120%;
+                    }
+
+                    .sub-headline {
+                        font-size: 22px;
+                        font-weight: bold;
+                        color:#001242;
+                    }
+                }
+            }
+        }
+    }
+
+    &#split {
+        padding: 0;
+        
+        .container {
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding:0;
+
+            .columns {
+                align-items: normal;
+
+                .column-66 {
+                    width:66.6%;
+                    padding: 7%;
+                    background:#001242;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    @include respond(tab-port) {
+                        width: 100%;
+                    }
+
+                    .pre-headline {
+                        color:#FAA916;
+                    }
+
+                    h2 {
+                        color:$white;
+                    }
+                }
+    
+                .column-33 {
+                    width:33.4%;
+                    padding: 7%;
+                    background:#70C1B3;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    @include respond(tab-port) {
+                        width: 100%;
+                    }
+
+                    p {
+                        font-size: 22px;
+                        line-height: 140%;
+                    }
+                }
+            }
+        }
+    }
+}

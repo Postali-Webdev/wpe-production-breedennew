@@ -1,0 +1,15 @@
+{
+  "name": "acf/random-testimonial",
+  "title": "Crest Randomized Single Testimonial",
+  "description": "Single testimonial block that displays a random testimonial",
+  "category": "postali-blocks",
+  "icon": "admin-comments",
+  "keywords": ["testimonial", "review"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "random-testimonial.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "acf/single-testimonial",
+    "title": "Crest Single Testimonial Block",
+    "description": "Manually add copy to display a single testimonial",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["results"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "single-testimonial.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

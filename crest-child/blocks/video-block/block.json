@@ -1,0 +1,15 @@
+{
+    "name": "acf/video-block",
+    "title": "Crest Video & Copy Block",
+    "description": "Video content block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["video"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "video-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

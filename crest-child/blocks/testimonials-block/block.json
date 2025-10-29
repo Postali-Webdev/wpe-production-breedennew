@@ -1,0 +1,15 @@
+{
+    "name": "acf/testimonials-block",
+    "title": "Crest Testimonials Block",
+    "description": "Testimonials block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["results"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "testimonials-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

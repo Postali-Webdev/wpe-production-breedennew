@@ -1,0 +1,15 @@
+{
+    "name": "acf/tabs",
+    "title": "Crest Tabbed Content Block",
+    "description": "Tabbed content block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["tabs"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "tabs.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

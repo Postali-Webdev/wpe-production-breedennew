@@ -1,0 +1,15 @@
+{
+    "name": "acf/related",
+    "title": "Crest Related Resources Block",
+    "description": "Related Resources block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["links"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "related-resources.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

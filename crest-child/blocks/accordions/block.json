@@ -1,0 +1,15 @@
+{
+    "name": "acf/accordion",
+    "title": "Crest Accordion Block",
+    "description": "Accordions block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["accordion"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "accordions.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

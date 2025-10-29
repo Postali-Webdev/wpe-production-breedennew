@@ -1,0 +1,15 @@
+{
+  "name": "acf/steps-columns",
+  "title": "Crest Steps Columns",
+  "description": "Numbered steps in columns",
+  "category": "postali-blocks",
+  "icon": "admin-comments",
+  "keywords": ["steps", "columns"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "steps-columns.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

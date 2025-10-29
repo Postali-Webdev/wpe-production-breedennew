@@ -1,0 +1,15 @@
+{
+    "name": "acf/banner-block",
+    "title": "Crest Header Banner Block",
+    "description": "Header banner block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["banner"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "banner-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

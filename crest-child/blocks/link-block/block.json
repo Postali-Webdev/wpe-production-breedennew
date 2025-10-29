@@ -1,0 +1,15 @@
+{
+    "name": "acf/links",
+    "title": "Crest Link Block",
+    "description": "Accordions block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["links"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "link-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

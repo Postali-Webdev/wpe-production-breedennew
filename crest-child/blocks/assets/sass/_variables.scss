@@ -1,0 +1,42 @@
+// Breakpoints
+$desktop-full: 1920px;
+$desktop-lg: 1400px;
+$desktop: 1200px;
+$tab-land: 1024px;
+$tab-port: 820px;
+$phone: 600px;
+
+// Containers
+$container-max-width: $desktop-lg;
+$container-padding: 30px;
+
+// Transitions
+$transition-speed: .3s;
+$transition-fast: .3s ease-in-ease-out;
+$transition-slow: .5s ease-in-ease-out;
+
+// Core Colors
+$blk: #000000;
+$white: #FFFFFF;
+$red: #C81D25;
+$blue: #3772FF;
+$dk-grey: #292929;
+$md-grey: #707070;
+$grey: #EFEFEF;
+$lt-grey: #F2F4F3;
+
+$link-transition-speed: .15s;
+$trans: 0.2s linear;
+
+// Typography
+$sans: 'Red Hat Display', sans-serif;
+$serif: 'PT Serif', serif;
+$icomoon: 'Icomoon';
+
+$body-line-height: 130%;
+
+// Font Weight
+$light: 100;
+$normal: 400;
+$bold: 700;
+$black: 800;

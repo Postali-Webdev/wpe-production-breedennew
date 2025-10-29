@@ -1,0 +1,33 @@
+#awards {
+    margin: 30px 0;
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;   
+    .award {
+        width: 20%;
+        border-right: solid 2px $md-grey;
+        padding-right: 30px;
+        &:nth-of-type(3n) {
+            border-right: none;
+        }
+        @include respond(phone) {
+            width: 30%;
+            border-right: solid 1px $md-grey;
+            padding-right: 15px !important;
+            &:nth-of-type(2n) {
+                border-right: none;
+            }
+        }
+        &:last-of-type {
+            border-right: none;
+            padding-right: 0;
+        }
+        img {
+            width: 100%;
+            height: 70px;
+            object-fit: contain;
+        }
+    }
+}

@@ -1,0 +1,205 @@
+footer {
+    .footer-upper {
+        background: $lt-grey;
+        .footer-upper-wrapper {
+            .btn {
+                margin: 0 auto;
+                @include respond(tab-land) {
+                    margin: 0;
+                }
+            }
+            @include respond(tab-land) {
+                flex-direction: column;
+                .column-25, .column-75 {
+                    width: 100%;
+                }
+                .column-25 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    .btn {
+                        width: fit-content;
+                        width: -webkit-fit-content;
+                        width: -moz-fit-content;
+                        margin-bottom: 30px;
+                    }
+                    img {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+        .column-25 {
+            img {
+                margin-bottom: 30px;
+                max-width: 300px;
+                object-fit: contain;
+                @include respond(phone) {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+        .column-75 {
+            .footer-copy {
+                margin-top: 19px;
+                @include respond(phone) {
+                    margin-bottom: 0;
+                }
+            }
+            .locations {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+                @include respond(desktop) {
+                    grid-template-columns: repeat(2, 1fr);
+                    width: 100%;
+                }
+                @include respond(tab-land) {
+                    margin-top: 30px;
+                }
+                @include respond(phone) {
+                    grid-template-columns: 1fr;
+                }
+                .location {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 20px;
+                    .location-name {
+                        p, a p {
+                            font-size: 2rem;
+                            font-weight: $black;
+                            text-decoration: underline;
+                        }
+                    }
+                    .location-address {
+                        p {
+                            font-size: 1.5rem !important;
+                        }
+                    }
+                    p {
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+    .footer-lower {
+        background: $dk-grey;
+        .gform_wrapper {
+            .gfield--type-checkbox {
+                margin-bottom: -50px !important;
+            }
+        }
+        .container.wide-container {
+            max-width: 1600px !important;
+        }
+        .footer-links {
+            @include respond(desktop) {
+                flex-direction: column;
+                .column-50, .column-33, .column-20 {
+                    width: 100%;
+                }
+            }
+        }
+        .column-50 {
+            width: 40%;
+            .form-title {
+                color: $white;
+                font-size: 2rem !important;
+                font-weight: $black;
+            }
+        }
+        .column-33 {
+            width: 34%;
+            .nav-wrapper {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                @include respond(desktop) {
+                    justify-content: flex-start;
+                    margin-bottom: 50px;
+                    gap: 50px;
+                }
+                @include respond(phone) {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    text-align: left;
+                }
+                .nav-title {
+                    color: $white !important;
+                    font-size: 1.8rem !important;
+                    font-weight: $black;
+                }
+                .menu {
+                    list-style-type: none;
+                    margin: 0 !important;
+                    li, li a {
+                        color: $white !important;
+                    }
+                    li {
+                        margin: 0 0 5px 0 !important;
+                        
+                    }
+                    li a {
+                        font-size: 1.4rem !important;
+                        text-decoration: underline !important;
+                        &:hover {
+                            text-decoration: none !important;
+                        }
+                    }
+                }
+            }
+        }
+        .column-20 {
+            justify-content: flex-end;
+            @include respond(desktop) {
+                justify-content: flex-start;
+                margin-bottom: 50px;
+            }
+            @include respond(phone) {
+                justify-content: center;
+            }
+        }
+        .discalaimer-column {
+            border-top: solid 1px $white;
+            padding-top: 20px;
+            .disclaimer {
+                padding: 0 30px;
+                @include respond(phone) {
+                    padding: 0;
+                }
+                p {
+                    color: $white;
+                    font-size: 1.2rem !important;
+                    margin-bottom: 10px !important;
+                }
+            }
+            .copyright {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 30px;
+                gap: 20px;
+                @include respond(phone) {
+                    padding: 0;
+                    flex-wrap: wrap;
+                }
+                p, a {
+                    color: $white;
+                    margin: 0 !important;
+                    font-size: 1.2rem !important;
+                }
+                .right-col {
+                    .postali-branding {
+                        img {
+                            max-width: 250px;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+#banner-50 {
+    margin-bottom: 140px;
+    background: $dk-grey;
+    @include respond(tab-port) {
+        padding-top: 50px;
+        margin-bottom: 100px;
+    }
+    @include respond(phone) {
+        margin-bottom: 80px;
+    }
+    span, p, #breadcrumbs a {
+        color: $white !important;
+    }
+    .columns {
+        align-items: stretch !important;
+    }
+    .column-50 {
+        &.content-block {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            @include respond(tab-port) {
+                padding-top: 60px;
+            }
+            h1 {
+                margin-bottom: 30px;
+            }
+            .container {
+                padding-right: 0;
+                @include respond(tab-port) {
+                    padding: 0 30px;
+                }
+            }
+            .btn {
+                border: solid 3px $red !important;
+                &:hover {
+                    color: $red !important;
+                    background: $white !important;
+                }
+            }
+            p > a:not(.btn) {
+                color: $white !important;
+                &:hover {
+                    color: $white !important;
+                }
+            }
+        }
+        &.img-block {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        &.banner-form {
+            position: relative;
+            img {
+                display: none;
+            }
+            form {
+                margin-right: 30px;
+                @include respond(tab-port) {
+                    margin: 0 30px;
+                }
+            }
+        }
+    }
+    &.banner-50-form {
+        margin-top: 94px !important;
+        padding-top: 30px;
+        @include respond(tab-land) {
+            margin-top: 75px !important;
+        }
+        .column-50 {
+            &.content-block {
+                padding-top: 0;
+                align-self: flex-start !important;
+            }
+        }
+
+    }
+}
+
+#breadcrumb-banner {
+    padding-top: 120px;
+}

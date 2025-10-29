@@ -1,0 +1,15 @@
+{
+    "name": "acf/cta-block",
+    "title": "Crest CTA Block",
+    "description": "Call to Action block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["cta"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "cta-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

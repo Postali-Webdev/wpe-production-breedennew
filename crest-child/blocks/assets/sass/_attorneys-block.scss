@@ -1,0 +1,130 @@
+.attorney-block {
+    &#attorneys-bio {
+        .container {
+            .columns {
+                align-items: normal;
+
+                .column-33 {
+                    position: relative;
+                    background: $white;
+                    margin: .5%;
+                    width: 32.3%;
+                    border-radius: 0 0 10px 10px;
+                    
+                    @include respond(tab-land) {
+                        width:48%;
+                        margin:1%;
+                    }
+
+                    @include respond(tab-port) {
+                        width:100%;
+                        margin:10px 0;
+                    }
+                    
+                    h3 {
+                        color:$blk;
+                    }
+                
+                    .attorney-img {
+                        position: relative;
+            
+                        img {
+                            height: 450px;
+                            width: 100%;
+                            -o-object-fit: cover;
+                            object-fit: cover;
+                            -o-object-position: center;
+                            object-position: center;
+
+                            @include respond(tab-port) {
+                                height:550px;
+                            }
+
+                            @include respond(phone) {
+                                height:450px;
+                            }
+                        }
+                    }
+            
+                    .attorney-details {
+                        padding: 30px 30px 70px;
+                        box-sizing: border-box;
+
+                        p {
+                            color:$blk;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &#attorneys-nobio {
+        .attorney-wrapper {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            @include respond(desktop) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include respond(tab-port) {
+                grid-template-columns: 1fr;
+            }
+        }
+        .attorney {   
+            display: flex;
+            flex-wrap: nowrap;
+            &:hover {
+                text-decoration: none !important;
+                p {
+                    font-weight: $normal !important;
+                }
+                .see-bio {
+                    .arrow-icon {
+                        &:before {
+                            background: $red;
+                        }
+                    }
+                }
+                   
+            }
+            .attorney-img {
+                position: relative;
+                width: 35%;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                }
+            }
+            .attorney-content {
+                background: $white;
+                width: 55%;
+                padding: 30px;
+                @include respond(desktop-lg) {
+                    padding: 30px 20px;
+                }
+                p {
+                    color: $dk-grey;
+                    margin-bottom: 40px !important;
+                }
+                h4 {
+                    margin-bottom: 10px !important;
+                    font-size: 2rem !important;
+                }
+                .see-bio {
+                    padding-left: 38px;
+                    position: relative;
+                    margin-bottom: 0 !important;
+                    .arrow-icon {
+                        position: absolute;
+                        left: 0;
+                        top: -2px;
+                    }
+                }
+            }
+        }
+    }
+}

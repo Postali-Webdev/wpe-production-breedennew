@@ -1,0 +1,15 @@
+{
+    "name": "acf/columns",
+    "title": "Crest Columns Block",
+    "description": "A custom columns layout block that uses ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["columns"],
+    "acf": {
+        "mode": "columns",
+        "renderTemplate": "columns.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

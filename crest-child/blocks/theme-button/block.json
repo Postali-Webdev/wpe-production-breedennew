@@ -1,0 +1,15 @@
+{
+    "name": "acf/crest-button",
+    "title": "Crest Button Block",
+    "description": "Default theme styled button.",
+    "category": "postali-blocks",
+    "icon": "smiley",
+    "keywords": ["button"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "theme-button.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

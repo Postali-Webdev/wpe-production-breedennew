@@ -1,0 +1,15 @@
+{
+    "name": "acf/awards",
+    "title": "Crest Awards Block",
+    "description": "Awards block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["awards"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "awards-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

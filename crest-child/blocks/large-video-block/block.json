@@ -1,0 +1,15 @@
+{
+    "name": "acf/large-video-embed",
+    "title": "Crest Large Video Embed Block",
+    "description": "Custom video embed block.",
+    "category": "postali-blocks",
+    "icon": "smiley",
+    "keywords": ["video", "embed", "youtube", "vimeo"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "video-embed.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "acf/slider-process",
+    "title": "Crest Process Slider",
+    "description": "Process slider block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["slider"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "slider-process.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

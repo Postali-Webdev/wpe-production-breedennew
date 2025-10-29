@@ -1,0 +1,15 @@
+{
+    "name": "acf/attorneys-block",
+    "title": "Crest Attorneys Block",
+    "description": "Attorneys block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["attorneys"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "attorneys-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

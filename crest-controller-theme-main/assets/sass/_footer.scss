@@ -1,0 +1,142 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+.footer {    
+    background: $blk;
+    p,
+    ul li a {
+        color:$white;
+        line-height: 170%;
+        font-size: 16px;
+    }
+    
+    strong {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    .spacer-60 {
+        @include respond(phone) {
+            height:30px;
+        }
+    }
+
+    .container {
+        .columns {
+            .column-full {
+                .custom-logo-link {
+                    img {
+                        max-height: 65px;
+                        width: auto;
+                        height: 65px;
+                    }
+                }
+            }
+            
+            .address-map {
+                justify-content: space-between;
+                
+                .footer-address {
+                    max-width: 35%;
+
+                    @include respond(tab-port) {
+                        width:100%;
+                        max-width: 100%;
+                    }
+                }
+            
+                .footer-map {
+                    max-width: 60%;
+
+                    @include respond(tab-port) {
+                        width:100%;
+                        max-width: 100%;
+                        margin-bottom: 30px;
+                    }
+            
+                    iframe {
+                        max-width: 100%;
+                        height: 180px;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .menu {
+                p {
+                    margin-bottom: 0;
+                }
+                #menu-footer-menu {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+            
+                    li {
+                        margin-left: 0;
+        
+                        a {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            a.social-link {
+                span {
+                    margin-right: 10px;
+                    color: $blk;
+                    background: $white;
+                    font-size: 25px;
+                    border-radius: 50%;
+                    transition: $trans;
+                }
+            }
+
+            .footer-social {
+                display:flex;
+                width: 15%;
+
+                @include respond(tab-port) {
+                    width:100%;
+                    max-width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .footer-utility {
+                width:80%;
+
+                @include respond(tab-port) {
+                    width:100%;
+                    max-width: 100%;
+                }
+
+                .utility {
+                    margin-bottom: 15px;
+                    
+                    a {
+                        font-size: 14px;
+                        text-decoration: underline;
+                        margin-right: 20px;
+                        color:$white;
+
+                        @include respond(phone) {
+                            display:block;
+                            margin:15px 0;
+                        }
+                    }
+                }
+
+                .disclaimer {
+                    @include respond(phone) {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

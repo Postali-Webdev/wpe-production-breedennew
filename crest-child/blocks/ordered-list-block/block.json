@@ -1,0 +1,15 @@
+{
+    "name": "acf/ordered-list",
+    "title": "Crest Ordered List Block",
+    "description": "Ordered list that displays title and copy for each list item",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["map"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "ordered-list.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

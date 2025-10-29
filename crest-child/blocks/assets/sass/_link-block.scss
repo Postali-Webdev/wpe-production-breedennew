@@ -1,0 +1,182 @@
+.link-block {
+    background: none;
+
+    h2 {
+        margin:0 auto 50px;
+        text-align: center;
+    }
+    
+    ul.links{
+        width: 100%;
+        list-style-type: none;
+        margin-left: 0 !important;
+        li {
+            margin: 0;
+            margin-bottom: 15px;
+            position: relative;
+            &::after {
+                content: "\e916" !important;
+                font-family: $icomoon;
+                position: absolute;
+                right: 25px;
+                font-size: 16px;
+                top: 20px;
+                color:$white;
+                background: $blue;
+                width: 28px;
+                height: 26px;
+                display: flex;
+                justify-content: center;
+                border-radius: 50%;
+                transition: $trans;
+            }
+            &:has(a:hover) {
+                &:after {
+                    transform: rotate(45deg);
+                }
+            }
+            a {
+                text-decoration: none;
+                color:$dk-grey;
+                font-size: 20px;
+                font-weight: $black !important;
+                font-family: $sans;
+                display: block;
+                padding: 20px 65px 20px 40px;
+                background: $white;
+            }
+        }
+    }
+
+    &#links-full {
+        h2 {
+            margin:0 auto 25px;
+        }
+
+        p.subhead {
+            max-width: 50%;
+            margin:0 auto 50px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .links {
+            display: flex;
+            align-items: normal;
+            justify-content: space-between;
+            gap: 20px;
+
+            &.boxes-1 {
+                .link-box {
+                    width:100%;
+                }
+            }
+
+            &.boxes-2 {
+                @include respond(tab-port) {
+                    flex-wrap: wrap;
+                }
+
+                .link-box {
+                    width:49%;
+
+                    @include respond(tab-port) {
+                        width:100%;
+                    }
+                }
+            }
+
+            &.boxes-3 {
+                @include respond(tab-land) {
+                    flex-wrap: wrap;
+                }
+
+                .link-box {
+                    width:32.3%;
+
+                    @include respond(tab-land) {
+                        width:100%;
+                    }
+                }
+            }
+
+            &.boxes-4 {
+                @include respond(tab-land) {
+                    flex-wrap: wrap;
+                }
+
+                .link-box {
+                    width:24%;
+
+                    @include respond(tab-land) {
+                        width:100%;
+                    }
+                }
+            }
+
+            .link-box {
+                background: white;
+                padding: 50px 50px 80px;
+                box-sizing: border-box;
+                border-radius: 15px;
+                transition: $trans;
+                position: relative;
+                margin-bottom: 10px;
+
+                img {
+                    max-width: 100px;
+                }
+
+                h3 {
+                    margin-bottom: 20px;
+                }
+
+                .link-button {
+                    position: absolute;
+                    bottom: 35px;
+                    right: 35px;
+                    display: flex;
+                    align-items: center;
+                    color:#001242;
+                    text-decoration: none;
+                    font-family: $sans;
+                    font-size: 16px;
+                    font-weight: bold;
+
+                    .text {
+                        text-decoration: underline;
+                    }
+
+                    .icon-crest-arrow-right {
+                        height: 35px;
+                        width:35px;
+                        margin-left: 15px;
+                        background-color: #70C1B3;
+                        color:$white;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: $trans;
+                    }
+
+                    &:hover {
+                        .icon-crest-arrow-right {
+                            rotate: -45deg;
+                            background: #001242;
+                        }
+                    }
+                }
+                
+                &:hover {
+                    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.15);
+                }
+            }
+        }
+
+        .btn {
+            margin: 0 auto;
+            display: flex;
+        }
+    }
+}

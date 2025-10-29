@@ -1,0 +1,15 @@
+{
+    "name": "acf/results-scroller",
+    "title": "Crest Results Scroller",
+    "description": "Results scroller block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["results"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "results-scroller.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

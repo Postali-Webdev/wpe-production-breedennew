@@ -1,0 +1,15 @@
+{
+    "name": "acf/map",
+    "title": "Crest Map Block",
+    "description": "Map block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["map"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "map-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

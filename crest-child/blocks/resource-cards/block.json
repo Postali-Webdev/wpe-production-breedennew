@@ -1,0 +1,15 @@
+{
+    "name": "acf/resource-cards",
+    "title": "Crest Resource Cards Block",
+    "description": "Repeatable cards that display copy, icon, and links to resources.",
+    "category": "postali-blocks",
+    "icon": "smiley",
+    "keywords": ["resources"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "resource-cards.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

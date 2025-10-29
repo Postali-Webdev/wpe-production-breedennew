@@ -1,0 +1,280 @@
+.testimonials-block {
+    background: none;
+    padding: 0 !important;
+    .column-full {
+        .testimonial-slide-wrapper {
+            display: flex;
+            justify-content: center !important;
+            gap: 15px;
+            @include respond(tab-land) {
+                display: block;
+                width: 100%;
+            }
+            .slick-track {
+                display: flex !important;
+                gap: 10px;
+            }
+            .column-33 {
+                margin: 0 !important;
+                justify-content: flex-start !important;
+                padding: 50px 30px 80px 30px !important;
+                @include respond(tab-land) {
+                    width: auto;
+                    padding: 50px 30px !important;
+                }
+            }
+            .slick-next {
+                right: 0;
+            }
+            .slick-prev {
+                right: 8% !important;
+                @media screen and (max-width: 400px) {
+                    right: 12% !important;
+                }
+            }
+        }
+    }
+    .rating-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        .average {
+            font-size: 2rem !important;
+            font-weight: $bold !important;
+            font-family: $sans;
+            margin: 0 !important;
+        }
+        .stars {
+            position: relative;
+            margin: 0;
+
+            &::after {
+                content: "★★★★★";
+                color: $blue;
+                font-size: 17px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+                margin: 0;
+            }
+        }
+    }
+    .copy {
+        margin-bottom: 30px;
+    }
+    .author-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        position: absolute;
+        bottom: 30px;
+        @include respond(tab-land) {
+            position: relative;
+            bottom: 0;
+        }
+        img {
+            max-width: 100px;
+        }
+        p {
+            margin: 0 !important;
+            font-family: $serif !important;
+            letter-spacing: 3.2px;
+            line-height: 2rem;
+            font-weight: $light !important;
+            text-transform: uppercase;
+        }
+    }
+
+    .reviews-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin: 0 2% 0 auto;
+
+        .rating {
+            display: block;
+            text-align: center;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                right: -17px;
+                width: 2px;
+                height: 100%;
+                top:0;
+                background:$blk;
+                content: "";
+            }
+            .total {
+                font-size: 13px;
+                text-transform: uppercase;
+                font-family: $sans;
+            }
+        }
+
+        .logo {
+            width: 100px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .testimonial {
+        background:$white;
+        position: relative;
+        box-sizing: border-box;
+        padding: 50px 30px;
+        flex-direction: column;
+        width:31.3%;
+        margin:0 1%;
+        justify-content: space-between !important;
+        @include respond(tab-land) {
+            margin: 0 10px !important;
+        }
+    }
+
+    a.more {
+        display: flex;
+        align-items: center;
+        color: $blk;
+        text-decoration: underline;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:hover {
+            color:#226CE0;
+            text-decoration: none;
+        }
+    }
+
+    .icon-crest-arrow-right {
+        margin-left: 10px;
+        font-size: 18px;
+        color:#226CE0;
+    }
+
+    &#testimonials-one {
+        background: #001242;
+        
+        .rating-details-block {
+            display: flex;
+            margin-bottom: 60px;
+            align-items: center;
+            justify-content: space-between;
+
+            @include respond(phone) {
+                display: block;
+            }
+
+            .logo-block {
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+
+                @include respond(phone) {
+                    margin-bottom: 15px;
+                }
+
+                .stars {
+                    margin-left: 15px;
+                }
+            }
+
+            img {
+                width: 90px;
+                -webkit-filter: invert(1);
+                        filter: invert(1);
+            }
+        }
+
+        .column-66 {
+            flex-direction: column;
+
+            p {
+                color:$white;
+                font-size: 22px;
+                line-height: 180%;
+                font-weight: normal;
+            }
+
+            .name-date {
+                p {
+                    font-size: 16px;
+                    margin-bottom: 0;
+                    font-weight: bold;
+                }
+            }
+
+            .more {
+                display:flex;
+                align-items: center;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+
+                a {
+                    color:$white;
+                    text-decoration: underline;
+                    font-size: 16px;
+                    font-weight: bold;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                .icon-crest-arrow-right {
+                    margin-left: 10px;
+                    font-size: 18px;
+                    color:$white;
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #226CE0;
+                    margin-left: 20px;
+                    transition: $trans;
+
+                    &::before {
+                        font-size: 15px;
+                    }
+                }
+
+                &:hover {
+                    .icon-crest-arrow-right {
+                        margin-left: 24px;
+                    }
+                }
+            }
+        }
+
+        .cta-block  {
+            background: $white;
+            padding: 50px 30px;
+            border-radius: 15px;
+            justify-content: center;
+            text-align: center;
+
+            @include respond(tab-port) {
+                margin-top: 50px;
+            }
+
+            p.lrg {
+                font-size: 24px;
+                font-weight: bold;
+                color: #001242;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

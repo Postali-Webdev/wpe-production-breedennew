@@ -1,0 +1,44 @@
+header {
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 50;
+    display:flex;
+    height:115px;
+    transition: $trans;
+    
+    #header-top {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        width: 100%;
+        align-items: center;
+        padding: 0 20px;
+        
+        &_left {
+            display: flex;
+            width: 25%;
+            justify-content: flex-start;
+
+            .custom-logo-link {
+                width: 100%;
+                height: auto;
+                display:flex;
+
+                .custom-logo {
+                    max-height: 60px;
+                    max-width: 340px;
+                    width: 100%;
+
+                    @include respond(phone) {
+                        max-width: 250px;
+                    }
+                }
+            }
+            
+            @include respond(tab-land) {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,362 @@
+#wpadminbar .quicklinks ul {
+    top: -34px !important;
+}
+
+body {
+    background: $grey !important;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+.btn:not(.btn-search) {
+    background: $red !important;
+    font-family: $sans !important;
+    font-weight: $bold;
+    color: $white;
+    font-size: 1.8rem !important;
+    text-decoration: none;
+    transition: $trans;
+    border: solid 3px $red;
+    padding: 15px 25px !important;
+    &:hover {
+        background: $blk !important;
+        color: $white;
+        border-color: $blk;
+    }
+}
+
+.dark-bg {
+    .btn:not(.btn-search) {
+        &:hover {
+            background: $white !important;
+            color: $red;
+            border-color: $red;
+        }
+    }
+    a {
+        color: $white !important;
+    }
+}
+
+.gform_wrapper {
+    padding: 0 !important;
+    .gform_validation_errors {
+        h2 {
+            color: $white !important;
+            font-size: 14px !important;
+        }
+    }
+    .gform-loader {
+        font-size: 0.2rem !important;
+        border-block-end-color: $red !important;
+        border-inline-start-color: $red !important;
+    }
+    .gfield_validation_message {
+        color: $white !important;
+    }
+    .gform_fields {
+        row-gap: 25px !important;
+    }
+    .gform_required_legend {
+        display: none !important;
+    }
+    label, legend, p, a:not(.btn) {
+        color: $white !important;
+        font-family: $sans !important;
+        letter-spacing: 0.8px !important;
+        line-height: 2.1rem !important;
+    }
+    .gfield--type-html {
+        p, a {
+            font-size: 1.2rem !important;
+        }
+    }
+    input, textarea {
+        font-family: $sans !important;
+        border-radius: 0 !important;
+    }
+    input[type="text"], input[type="email"], input[type="tel"] {
+        padding: 20px 5px !important;
+    }
+    input[type="submit"] {
+        background: $red !important;
+        font-family: $sans !important;
+        font-weight: 700;
+        color: $white;
+        font-size: 1.8rem !important;
+        text-decoration: none;
+        border: solid 3px $red !important;
+        border-radius: 0 !important;
+        padding: 15px 35px !important;
+        text-transform: uppercase !important;
+        font-weight: $bold !important;
+        letter-spacing: 0.8px !important;
+        line-height: 2.1rem !important;
+        transition: $trans !important;
+        &:hover {
+            background: $white !important;
+            color: $red !important;
+        }
+    }
+}
+
+.dark-form {
+    .gform_wrapper {
+        background: $dk-grey !important;
+        padding: 50px !important;
+        .gform_title {
+            color: $white !important;
+            font-family: $sans !important;
+            font-size: 2rem !important;
+            margin-bottom: 30px !important;
+            letter-spacing: 1.1px !important;
+        }
+    }
+}
+
+.social-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-icon {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+
+    &:before {
+        content: "";
+        font-family: $icomoon;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $dk-grey;
+        border: solid 1px $dk-grey;
+        background: $white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: $trans;
+        font-size: 30px;
+    }
+
+    &:hover {
+        &:before {
+            background: $red;
+            color: $white;
+        }
+    }
+
+    &.facebook-icon {
+        &:before {
+            content: "\e913";
+        }
+    }
+
+    &.instagram-icon {
+        &:before {
+            content: "\e912";
+        }
+    }
+
+    &.twitter-icon {
+        &:before {
+            content: "\e911";
+        }
+    }
+
+    &.youtube-icon {
+        &:before {
+            content: "\e904";
+        }
+    }
+
+    &.linkedin-icon {
+        &:before {
+            content: "\e906";
+        }
+    }
+}
+
+//offset container to keep true max width of 1400px
+.container:not(#header-top):not(.wide-container) {
+    max-width: calc(1400px - 120px) !important;
+    &.container-wide {
+        max-width: 1600px !important;
+        padding: 0 40px !important;
+    }
+}
+
+.cta-wrapper {
+    margin-top: 40px;
+    p {
+        text-transform: uppercase;
+        font-weight: $bold;
+        font-size: 1.5rem !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+.slick-slider {
+    padding-top: 30px;
+    .slick-next, .slick-prev {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $dk-grey;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        &:hover {
+            background: $red !important;
+            &:before {
+                color: $white !important;
+            }
+        }
+        &:focus {
+            background: $dk-grey !important;
+            &:before {
+                color: $white !important;
+            }
+        }
+        &:before {
+            content: "\e914" !important;
+            color: $white !important;
+            opacity: 1;
+            font-family: $icomoon;
+            font-weight: $bold;
+            font-size: 16px;
+            position: absolute;
+        }
+    }
+    .slick-prev {
+        left: unset !important;
+        right: 22% !important;
+        @include respond(tab-land) {
+            right: 25% !important;
+        }
+        @include respond(phone) {
+            right: 13% !important;   
+        }
+        &:before {
+            transform: rotate(180deg);
+        }
+    }
+    .slick-next {
+        right: 17%;
+        @include respond(phone) {
+            right: 0% !important;
+        }
+    }
+}
+
+.global-prefooter-cta {
+    h2, p, a:not(.btn) {
+        color: $white !important;
+    }
+}
+
+.pagination {
+    margin-bottom: 80px;
+    padding-top: 60px !important;
+    .nav-links {
+        gap: 5px;
+        .page-numbers {
+            font-weight: $black !important;
+            font-family: $sans !important;
+            color: $dk-grey !important;
+            font-size: 1.8rem !important;
+            &:not(.current):not(.prev):not(.next) {
+                opacity: 0.5 !important;
+            }
+            &.next,
+            &.prev {
+                background: $dk-grey !important;
+                &:hover {
+                    &:before {
+                        background: $red !important;
+                    }
+                }
+                &:before {
+                    color: $white !important;
+                    content: "\e914" !important;
+                    font-family: $icomoon;
+    
+                }
+            }
+    
+            &.prev {
+                &:before {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
+.tooltip {
+    position: relative;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $white;
+        top: -10px;
+        left: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+    &:after {
+        content: "i";
+        font-size: 20px;
+        color: $dk-grey;
+        position: absolute;
+        font-weight: bold;
+        font-family: $serif;
+        font-style: italic;
+    }
+}
+
+.tooltip-content {
+    display: none;
+    position: relative;
+    top: 15px;
+    background: $dk-grey;
+    color: $white;
+    padding: 10px 0;
+    border-bottom: solid 1px $white;
+    font-style: italic;
+}
+
+.award-slider {
+    .slick-track {
+        display: flex !important;
+        align-items: center !important;
+        .slick-slide {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+    }
+    .slick-prev {
+        right: unset !important;
+        left: 0 !important;
+    }
+    .slick-next {
+        right: 0 !important;
+    }
+    .slick-prev, .slick-next {
+        top: 44% !important;
+    }
+}

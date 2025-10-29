@@ -1,0 +1,15 @@
+{
+    "name": "acf/contact",
+    "title": "Crest Contact Form Block",
+    "description": "Contact form block using ACF fields.",
+    "category": "postali-blocks",
+    "icon": "admin-comments",
+    "keywords": ["contact"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "contact-block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

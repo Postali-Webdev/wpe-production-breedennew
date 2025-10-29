@@ -1,0 +1,348 @@
+.accordions-block {
+    background: none;
+
+    h2 {
+        color: $dk-grey;
+        margin: 0 auto;
+    }
+
+    .accordion-wrapper {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-auto-rows: min-content;
+        align-items: flex-start;
+        gap: 20px;
+        &.accordion-single {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+        &.accordion-two {
+            align-items: stretch;
+            grid-template-columns: 1fr 1fr;
+            @include respond(tab-port) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .accordion,
+    .accordion-mobile {
+        background:$white;
+        width: 100%;
+        transition:$trans;
+        box-shadow: 3px 3px 7px 2px $lt-grey;
+        cursor: pointer;
+        &.active {
+            background: $white;
+
+            .accordion {
+                &_title {
+                    h3 {
+                        color:$dk-grey;
+                    }
+                }
+
+                &_content {
+                    * {
+                        color:$dk-grey;
+                    }
+                }
+            }
+        }
+
+        &_title {
+            background: none;
+            padding: 20px 60px 20px 30px;
+            margin-top: 0;
+            position: relative;
+
+            @include respond(phone) {
+                padding: 20px 55px 20px 30px;
+            }
+
+            .accordion-title {
+                font-size: 2rem !important;
+                line-height: 120% !important;
+                font-weight: $bold;
+                pointer-events: none;
+                @include respond(phone) {
+                    font-size: 1.8rem !important;
+                }
+            }
+            .arrow-icon {
+                position: absolute;
+                right: 30px;
+                top: 20px;
+                &:before {
+                    content: "\e910" !important;
+                    transform: rotate(-45deg);
+                    font-size: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;               
+                    transition: $trans;
+                }
+            }
+            &.active {
+                .arrow-icon {
+                    &:before {
+                        background: $red;
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+
+        &_content {
+            padding: 0px 60px 0px 30px;
+            display:none;
+
+            @include respond(phone) {
+                padding:15px 30px;
+            }
+
+            p,
+            ul li,
+            h2,
+            h3 {
+                color: $blk;
+
+                a {
+                    color: $blk;
+                    text-decoration: underline;
+                }
+            }
+
+            ul {
+                font-size: 18px;
+                line-height: 170%;
+                margin-bottom: 30px;
+                margin-top: 0;
+                font-family: $sans;
+                text-transform: none;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &#accordions-horizontal {
+        @-webkit-keyframes grow {
+            0% { width:0; opacity:0; }
+            100% { width:25px; opacity:1; }
+        }
+    
+        @keyframes grow {
+            0% { width:0; opacity:0; }
+            100% { width:25px; opacity:1; }
+        }
+
+        h2 {
+            margin:0;
+        }
+        
+        .container {
+            .columns {
+                align-items: normal;
+
+                &.pa-desktop {
+                    @include respond(tab-port) {
+                        display:none;
+                    }
+                }
+    
+                &.pa-mobile {
+                    display:none;
+    
+                    @include respond(tab-port) {
+                        display:block;
+    
+                    }
+                }
+    
+                .column-50 {
+                    width:50%;
+    
+                    ul.acc_horiz {
+                        display: inline-block;
+                        position: relative;
+                        z-index: 10;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        list-style-type: disc;
+                        
+                        li {
+                            cursor: pointer;
+                            text-align: left;
+                            margin: 0;
+                            display: flex;
+                            padding: 25px;
+                            font-family: $sans;
+                            font-weight: bold;
+                            align-items: center;
+                            position: relative;
+                            background:$white;
+                            box-sizing: border-box;
+                            width:calc(100% - 15px);
+
+                            h3 {
+                                font-size: 20px;
+                                color: #001242;
+                                max-width: calc(100% - 50px);
+                            }
+                            
+                            &:not(:last-child) {
+                                margin-bottom: 10px;
+                            }
+
+                            &::before {
+                                position: absolute;
+                                content: "";
+                                width: 0;
+                                height: 100%;
+                                background:#001242;
+                                right:-25px;
+                                top:0;
+                                opacity: 0;
+                            }
+                
+                            &::after {
+                                content: "\e901";
+                                font-family: $icomoon;
+                                right: 25px;
+                                top: 22px;
+                                position: absolute;
+                                color: #001242;
+                                transition: 0.3s linear;
+                                font-size: 20px;
+                                font-weight: lighter;
+                            }
+                            
+                            &:hover {
+                                transition: all 0.3s ease;
+                                background-color:rgba($white, .3);
+                            }
+                            
+                            &.active {
+                                color: $white;
+                                transition: all 0.3s ease;
+                                background:#001242;
+                                h3 {
+                                    color:$white;
+                                }
+
+                                &::before {
+                                    -webkit-animation: .3s ease 0s normal forwards 1 grow;
+                                            animation: .3s ease 0s normal forwards 1 grow;
+                                }
+                
+                                &::after {
+                                    color: $white;
+                                    transform:rotate(45deg);
+                                }
+                            }
+                            
+                            span {
+                                display: block;
+                                text-transform: none;
+                                font-size: 14px;
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+        
+                .acc_horiz_container {
+                    display: flex;
+                    width: 100%;
+                    background:#001242;
+                    
+                    .acc_horiz_drawer_heading {
+                        display: none;
+                    }
+                    
+                    .acc_horiz_content {
+                        padding: 50px;
+                        height: 100%;
+                        display: none;
+                        text-align: left;
+                        box-sizing: border-box;
+
+                        h3 {
+                            color:$white;
+                            margin-bottom: 25px;
+                            font-size: 22px;
+                            margin-top: 0;
+                        }
+                        
+                        ul li,
+                        p {
+                            font-family: $sans;
+                            font-size: 18px;
+                            color:$white;
+                            margin:0;
+                            padding:0;
+                            line-height:150%;
+                        }
+    
+                        ul {
+                            margin-top: 10px;
+                            margin-left: 20px;
+                            
+                            li {
+                                &::marker {
+                                    color:#001242;
+                                    font-size: 20px;
+                                }
+    
+                                ul {
+                                    margin-top: 0 !important;
+                                }
+                            }
+                        }
+                    
+                        
+                        a {
+                            color: #333;
+                            text-decoration: underline;
+                            
+                            &:hover {
+                                color: #f10102;
+                                text-decoration: underline;
+                            }
+                        }
+
+                        a.btn {
+                            position: relative;
+                            background:none;
+                            color:#FAA916;
+                            text-transform: uppercase;
+                            padding: 15px 0 5px;
+                            font-size: 16px;
+                            letter-spacing: 2px;
+                            font-weight: bold;
+                            display: flex;
+                            align-items: center;
+                            margin-top: 30px;
+                            text-decoration: none;
+    
+                            span {
+                                font-size: 15px;
+                                margin-left: 10px;
+                                transition: $trans;
+                            }
+    
+                            &:hover {
+                                color:$white;
+    
+                                span {
+                                    margin-left: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

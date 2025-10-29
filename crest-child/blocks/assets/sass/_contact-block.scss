@@ -1,0 +1,88 @@
+.contact-block {
+    background: #EBEBEB;
+
+    .gform_wrapper {
+        background: $white;
+        border-radius: 20px;
+        padding: 15px 50px 50px !important;
+        margin-bottom: 0 !important;
+
+        .gfield_required {
+            color: $blk !important;
+        }
+
+        p.gform_required_legend {
+            color: $blk;
+            font-size: 12px;
+        }
+
+        .gform_fields {
+            grid-row-gap: 25px !important;
+        }
+
+        input, 
+        textarea {
+            border: none !important;
+            box-shadow: none !important;
+            background: #f2f2f2 !important;
+            padding: 25px !important;
+        }
+
+        input[type=submit] {
+            display: block;
+            width: 100% !important;
+            padding: 20px !important;
+            background: #267DC1 !important;
+            text-transform: uppercase !important;
+        }
+    }
+
+    &#split {
+        .container {
+            .columns {
+                background:#001242;
+                border-radius: 20px;
+                align-items: center;
+                
+                .column-66 {
+                    width: 66%;
+                    padding: 50px 10%;
+
+                    @include respond(desktop) {
+                        width:58%;
+                    }
+
+                    @include respond(tab-port) {
+                        width:100%;
+                        padding:50px;
+                    }
+
+                    * {
+                        color:$white;
+                    }
+
+                    .btn {
+                        background-color: #267DC1;
+
+                        &:hover {
+                            background-color: $white;
+                            color:$blk;
+                        }
+                    }
+                }
+            
+                .column-33 {
+                    width:34%;
+
+                    @include respond(desktop) {
+                        width:42%;
+                    }
+
+                    @include respond(tab-port) {
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+}
