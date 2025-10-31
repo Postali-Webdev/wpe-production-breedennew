@@ -44,7 +44,7 @@ $reverse_image = get_field('reverse_banner_image');
                     if( get_field('global_phone_number', 'options') ) :
                         $phone_number = get_field('global_phone_number', 'options');
                     ?>
-                        <a class="btn" href="tel:<?php echo $phone_number; ?>"><?php echo $phone_number; ?></a>
+                        <a class="btn" href="tel:<?php echo $phone_number; ?>" aria-label="Call the Breeden Firm Today"><?php echo $phone_number; ?></a>
                     <?php endif; ?>
                 </div>
                 <?php $review_block = get_field('banner_reviews_block'); ?>
@@ -61,7 +61,7 @@ $reverse_image = get_field('reverse_banner_image');
                     </div>
                     <?php $reviews_link = $review_block['review_link'];
                     if( $reviews_link ) : ?>
-                        <a class="reviews-link" href="<?php echo $reviews_link['url']; ?>"><?php echo $reviews_link['title']; ?> <span class="icon-crest-arrow-right"></span></a>
+                        <a class="reviews-link" href="<?php echo $reviews_link['url']; ?>" aria-label="Read reviews of our firm"><?php echo $reviews_link['title']; ?> <span class="icon-crest-arrow-right"></span></a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -87,7 +87,7 @@ $reverse_image = get_field('reverse_banner_image');
                     </div>
                     <?php $reviews_link = $review_block['review_link'];
                     if( $reviews_link ) : ?>
-                        <a class="reviews-link" href="<?php echo $reviews_link['url']; ?>"><?php echo $reviews_link['title']; ?> <span class="icon-crest-arrow-right"></span></a>
+                        <a class="reviews-link" href="<?php echo $reviews_link['url']; ?>" aria-label="Read reviews of our firm"><?php echo $reviews_link['title']; ?> <span class="icon-crest-arrow-right"></span></a>
                     <?php endif; ?>
                 </div>
             </div>

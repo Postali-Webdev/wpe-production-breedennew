@@ -52,9 +52,9 @@
                 <div class="banner-cta">
                     <?php if ($banner_cta_button_text) { ?>
                     <?php if ($banner_cta_button_link_type == 'phone') {?>
-                    <a href="tel:<?php echo $banner_cta_link_phone; ?>" class="btn"><?php echo $banner_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $banner_cta_link_phone; ?>" class="btn" aria-label="Call the Breeden Firm Today"><?php echo $banner_cta_button_text; ?></a>
                     <?php } elseif ($banner_cta_button_link_type == "page") { ?>
-                    <a href="tel:<?php echo $banner_cta_link_page; ?>" class="btn"><?php echo $banner_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $banner_cta_link_page; ?>" class="btn" aria-label="Click to visit this page"><?php echo $banner_cta_button_text; ?></a>
                     <?php } ?>                
                     <?php } ?>
                     <?php if ( $banner_cta_form_contact ) { ?>
@@ -89,9 +89,9 @@
                 <div class="banner-cta">
                     <?php if ($banner_cta_button_text) { ?>
                     <?php if ($banner_cta_button_link_type == 'phone') {?>
-                    <a href="tel:<?php echo $banner_cta_link_phone; ?>" class="btn"><?php echo $banner_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $banner_cta_link_phone; ?>" class="btn" aria-label="Call the Breeden Firm Today"><?php echo $banner_cta_button_text; ?></a>
                     <?php } elseif ($banner_cta_button_link_type == "page") { ?>
-                    <a href="tel:<?php echo $banner_cta_link_page; ?>" class="btn"><?php echo $banner_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $banner_cta_link_page; ?>" class="btn" aria-label="Click to visit this page"><?php echo $banner_cta_button_text; ?></a>
                     <?php } ?>                
                     <?php } ?>
                 </div>
@@ -119,9 +119,9 @@
                 <div class="banner-cta">
                     <?php if ($banner_cta_button_text) { ?>
                     <?php if ($banner_cta_button_link_type == 'phone') {?>
-                    <a href="tel:<?php echo $banner_cta_link_phone; ?>" class="btn"><?php echo $banner_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $banner_cta_link_phone; ?>" class="btn" aria-label="Call the Breeden Firm Today"><?php echo $banner_cta_button_text; ?></a>
                     <?php } elseif ($banner_cta_button_link_type == "page") { ?>
-                    <a href="tel:<?php echo $banner_cta_link_page; ?>" class="btn"><?php echo $banner_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $banner_cta_link_page; ?>" class="btn" aria-label="Click to visit this page"><?php echo $banner_cta_button_text; ?></a>
                     <?php } ?>                
                     <?php } ?>
                 </div>
@@ -150,9 +150,9 @@
                 <?php if ($intro_cta_button_text) { ?>
                 <div class="intro-cta">
                     <?php if ($intro_cta_button_link_type == 'phone') {?>
-                    <a href="tel:<?php echo $intro_cta_link_phone; ?>" class="btn"><?php echo $intro_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $intro_cta_link_phone; ?>" class="btn" aria-label="Call the Breeden Firm Today"><?php echo $intro_cta_button_text; ?></a>
                     <?php } elseif ($intro_cta_button_link_type == "page") { ?>
-                    <a href="tel:<?php echo $intro_cta_link_page; ?>" class="btn"><?php echo $intro_cta_button_text; ?></a>
+                    <a href="tel:<?php echo $intro_cta_link_page; ?>" class="btn" aria-label="Click to visit this page"><?php echo $intro_cta_button_text; ?></a>
                     <?php } ?>                
                 </div>
                 <?php } ?>

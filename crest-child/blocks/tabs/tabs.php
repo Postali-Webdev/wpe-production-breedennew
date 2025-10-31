@@ -44,7 +44,7 @@
                                 <?php the_sub_field('tab_content_copy'); ?>
                                 <?php if (get_sub_field('add_link')) { ?>
                                     <div class="spacer-30"></div>
-                                    <a href="<?php the_sub_field('link_location'); ?>" class="btn"><?php the_sub_field('link_text'); ?> <span class="icon-crest-arrow-right"></span></a>
+                                    <a href="<?php the_sub_field('link_location'); ?>" class="btn" aria-label="<?php the_sub_field('link_text'); ?>"><?php the_sub_field('link_text'); ?> <span class="icon-crest-arrow-right"></span></a>
                                 <?php } ?>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
         </div>
         <?php if(get_field('button_text')) { ?>
             <div class="spacer-60"></div>
-            <a href="<?php the_field('button_link'); ?>" class="btn"><?php the_field('button_text'); ?></a>
+            <a href="<?php the_field('button_link'); ?>" class="btn" aria-label="<?php the_field('button_text'); ?>"><?php the_field('button_text'); ?></a>
         <?php } ?>
     </div>
 </section>
