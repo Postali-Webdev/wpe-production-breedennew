@@ -298,20 +298,36 @@ function postali_defer_selected_styles( $html, $handle, $href, $media ) {
         return $html;
     }
 
-    // Only defer these specific, non-critical handles.
+    // Handles that are safe to defer by name.
     // Parent/child enqueues:
     // - parent-stylesheet, parent-styles, slick-styles (parent)
     // - child-stylesheet, child-styles, block-styles (child)
-    // Start conservatively with assets that aren't critical for first paint.
+    // Core/Plugin:
+    // - wp-block-library (Gutenberg block library CSS)
     $handles_to_defer = array(
-        'block-styles', // Gutenberg/ACF block styles bundle
-        'slick-styles', // Slick carousel stylesheet
-        // Add more handles here once verified as non-critical
-        // 'child-styles',
-        // 'parent-styles',
+        'block-styles',   // Child theme ACF/Gutenberg blocks bundle
+        'slick-styles',   // Slick carousel stylesheet
+        'wp-block-library', // Core block library CSS
     );
 
-    if ( ! in_array( $handle, $handles_to_defer, true ) ) {
+    // URL substrings to match when a minifier/combiner rewrites handles.
+    $href_patterns_to_defer = array(
+        'gravity-forms-theme-framework.min.css', // Gravity Forms Theme Framework CSS
+        'wp-includes/css/dist/block-library/style.min.css', // Core block library CSS
+        'dist/block-library/style.min.css', // broader match for safety
+    );
+
+    $should_defer = in_array( $handle, $handles_to_defer, true );
+    if ( ! $should_defer && is_string( $href ) ) {
+        foreach ( $href_patterns_to_defer as $pattern ) {
+            if ( false !== strpos( $href, $pattern ) ) {
+                $should_defer = true;
+                break;
+            }
+        }
+    }
+
+    if ( ! $should_defer ) {
         return $html;
     }
 
