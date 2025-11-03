@@ -281,3 +281,52 @@ function postali_remove_customizer_additional_css_section( $wp_customize ) {
     }
 }
 add_action( 'customize_register', 'postali_remove_customizer_additional_css_section', 20 );
+
+/**
+ * Defer non-critical CSS by converting selected styles into preload tags that
+ * swap to stylesheet on load, with a noscript fallback.
+ *
+ * Why: Improves render-start times by not blocking the parser on non-critical CSS.
+ * Safe-by-default: We only target explicitly listed handles to avoid FOUC.
+ *
+ * Adjust $handles_to_defer to include any additional non-critical styles.
+ */
+add_filter( 'style_loader_tag', 'postali_defer_selected_styles', 10, 4 );
+function postali_defer_selected_styles( $html, $handle, $href, $media ) {
+    // Don't modify in admin or customizer preview.
+    if ( is_admin() || is_customize_preview() ) {
+        return $html;
+    }
+
+    // Only defer these specific, non-critical handles.
+    // Parent/child enqueues:
+    // - parent-stylesheet, parent-styles, slick-styles (parent)
+    // - child-stylesheet, child-styles, block-styles (child)
+    // Start conservatively with assets that aren't critical for first paint.
+    $handles_to_defer = array(
+        'block-styles', // Gutenberg/ACF block styles bundle
+        'slick-styles', // Slick carousel stylesheet
+        // Add more handles here once verified as non-critical
+        // 'child-styles',
+        // 'parent-styles',
+    );
+
+    if ( ! in_array( $handle, $handles_to_defer, true ) ) {
+        return $html;
+    }
+
+    // Build a non-blocking stylesheet via media=print + onload swap and a noscript fallback.
+    // Preserve the original id convention ("{$handle}-css") on the swappable tag.
+    $swap  = sprintf(
+        "<link rel='stylesheet' id='%s-css' href='%s' media='print' onload=\"this.media='all'\" />",
+        esc_attr( $handle ),
+        esc_url( $href )
+    );
+    // Omit id on the noscript fallback to avoid duplicate ids when JS is disabled.
+    $fallback = sprintf(
+        "<noscript><link rel='stylesheet' href='%s' /></noscript>",
+        esc_url( $href )
+    );
+
+    return $swap . "\n" . $fallback . "\n";
+}
