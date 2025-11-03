@@ -14,20 +14,27 @@
             margin: 0;
             margin-bottom: 15px;
             position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                right: 25px;
+                top: 20px;
+                background: $blue;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                transition: $trans;
+            }
             &::after {
                 content: "\e916" !important;
                 font-family: $icomoon;
                 position: absolute;
-                right: 25px;
+                right: 29px;
+                top: 23px;
                 font-size: 16px;
-                top: 20px;
                 color:$white;
-                background: $blue;
-                width: 28px;
-                height: 26px;
                 display: flex;
                 justify-content: center;
-                border-radius: 50%;
                 transition: $trans;
             }
             &:has(a:hover) {

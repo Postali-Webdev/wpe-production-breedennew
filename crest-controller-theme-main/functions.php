@@ -25,8 +25,8 @@ function postali_parent_scripts() {
     // wp_enqueue_script('parent-scripts');
 
     // Adding icomonn
-    wp_register_style( 'icomoon', 'https://d1azc1qln24ryf.cloudfront.net/152819/PostaliTier1/style-cf.css?l7x1b4', array() );
-    wp_enqueue_style('icomoon');
+    // wp_register_style( 'icomoon', 'https://d1azc1qln24ryf.cloudfront.net/152819/PostaliTier1/style-cf.css?l7x1b4', array() );
+    // wp_enqueue_style('icomoon');
 
     // Add slick library
     // wp_register_script('slick-scripts', get_template_directory_uri() . '/assets/js/slick.min.js',array('jquery'), null, true); 

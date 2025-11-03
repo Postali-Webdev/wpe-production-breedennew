@@ -8,22 +8,23 @@
 ?><!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
-
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/icomoon/icomoon.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-BoldItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-BlackItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-BoldItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-LightItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-MediumItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-BoldItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/redhatdisplay/RedHatDisplay-BlackItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/icomoon/icomoon.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-BoldItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/wp-content/themes/crest-child/assets/fonts/ptserif/PTSerif-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
