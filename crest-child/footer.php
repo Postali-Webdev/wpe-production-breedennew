@@ -325,5 +325,14 @@ $remove_footer = get_field('remove_footer');
 <!-- Callrail -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/940938305/bb468ee859709bf54b70/12/swap.js"></script> 
 
+<!-- Clarity -->
+ <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "5ksm4db84a");
+</script>
+
 </body>
 </html>
