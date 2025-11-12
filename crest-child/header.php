@@ -99,6 +99,7 @@ endif; ?>
 			
 			<div id="header-top_right">
 				<div id="header-top_right_menu">
+                    <nav>
                     <?php
 						$homepage_id = trim(get_option('page_on_front'));
 						$locations = get_field('locations', 'options');
@@ -128,6 +129,7 @@ endif; ?>
 							wp_nav_menu( $args );
 						}
                     ?>	
+                    </nav>
 					<div id="header-top_mobile">
 						<div id="menu-icon" class="toggle-nav">
 							<span class="line line-1"></span>

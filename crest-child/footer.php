@@ -228,6 +228,7 @@ $remove_footer = get_field('remove_footer');
                     <div class="nav-wrapper">
                         <div class="nav">
                             <p class="nav-title"><?php the_field('practice_area_links_title', 'options'); ?></p>
+                            <nav>
                             <?php
                                 $locations = get_field('locations', 'options');
                                 $show_default_footer_menu = true;
@@ -257,9 +258,11 @@ $remove_footer = get_field('remove_footer');
                                     wp_nav_menu( $args );
                                 }
                             ?>	
+                            </nav>
                         </div>
                         <div class="nav">
-                                <p class="nav-title"><?php the_field('quick_links_title', 'options') ?></p>
+                            <p class="nav-title"><?php the_field('quick_links_title', 'options') ?></p>
+                            <nav>
                             <?php
                                 $args = array(
                                     'container' => false,
@@ -267,6 +270,7 @@ $remove_footer = get_field('remove_footer');
                                 );
                                 wp_nav_menu( $args );
                             ?>	
+                            </nav>
                         </div>
                     </div>
                     
