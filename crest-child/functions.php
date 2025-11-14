@@ -56,7 +56,7 @@ function crest_child_register_nav_menus() {
             'garner-nav' => __( 'Garner Navigation', 'postali' ),
             'angier-nav' => __( 'Angier Navigation', 'postali' ),
             'cary-nav' => __( 'Cary Navigation', 'postali' ),
-            'wake forest-nav' => __( 'Wake Forest Navigation', 'postali' ),
+            'wake-forest-nav' => __( 'Wake Forest Navigation', 'postali' ),
             'smithfield-nav' => __( 'Smithfield Navigation', 'postali' ),
         )
     );
