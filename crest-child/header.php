@@ -107,13 +107,14 @@ endif; ?>
 						foreach ( $locations as $location ) {
 							$location_page = $location['location_page'];
 							$location_name = strtolower($location['name']);
+                            $location_name_fixed = str_replace(' ', '-', $location_name);
 							$location_id = $location_page->ID;
 							
 							if( is_tree( $location_id ) ) {
 								
 								$args = array(
 									'container' => false,
-									'theme_location' => "$location_name-nav"
+									'theme_location' => "$location_name_fixed-nav"
 								);
 								wp_nav_menu( $args );		
 								$show_default_menu = false;
@@ -130,7 +131,7 @@ endif; ?>
 						}
                     ?>	
                     </nav>
-					<div id="header-top_mobile">
+					<div id="header-top_mobile" class="<?php echo $location_name_fixed; ?>">
 						<div id="menu-icon" class="toggle-nav">
 							<span class="line line-1"></span>
 							<span class="line line-2"></span>
