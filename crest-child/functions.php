@@ -51,6 +51,7 @@ function crest_child_register_nav_menus() {
             'angier-pa-nav' => __( 'Angier Footer Practice Area Navigation', 'postali' ),
             'garner-pa-nav' => __( 'Garner Footer Practice Area Navigation', 'postali' ),
             'cary-pa-nav' => __( 'Cary Footer Practice Area Navigation', 'postali' ),
+            'wake-forest-pa-nav' => __( 'Wake Forest Footer Practice Area Navigation', 'postali' ),
             'smithfield-pa-nav' => __( 'Smithfield Footer Practice Area Navigation', 'postali' ),
             'quick-links-nav' => __( 'Footer Quick Links Navigation', 'postali' ),
             'garner-nav' => __( 'Garner Navigation', 'postali' ),

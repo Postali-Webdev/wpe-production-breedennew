@@ -235,13 +235,14 @@ $remove_footer = get_field('remove_footer');
                                 foreach ( $locations as $location ) {
                                     $location_page = $location['location_page'];
                                     $location_name = strtolower($location['name']);
+                                    $location_name_fixed = str_replace(' ', '-', $location_name);
                                     $location_id = $location_page->ID;
                                     $location_schema = "";
                                     if( is_tree( $location_id ) ) {
                                         $location_schema = $location['location_schema'];
                                         $args = array(
                                             'container' => false,
-                                            'theme_location' => "$location_name-pa-nav"
+                                            'theme_location' => "$location_name_fixed-pa-nav"
                                         );
                                         wp_nav_menu( $args );		
                                         $show_default_footer_menu = false;
