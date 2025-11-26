@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Interior Block
+ * Template Name: Contact Block
  * @package Postali Crest Controller Theme
  * @author Postali LLC
  */
@@ -34,7 +34,7 @@ $featured_img = get_the_post_thumbnail();
                     }
                 ?>
                 <h1><?php the_field('banner_title') ?></h1>
-                <p class="subtitile"><?php the_field('banner_subtitle'); ?></p>
+                <p class="subtitle"><?php the_field('banner_subtitle'); ?></p>
                 <?php the_field('banner_copy'); ?>
                 <div class="cta-wrapper">
                     <p><?php the_field('banner_cta_text'); ?></p>

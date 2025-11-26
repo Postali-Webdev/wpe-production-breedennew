@@ -108,16 +108,50 @@
     }
 }
 
-.page-template-interior-block-template {
+.page-template-interior-block-template, .page-template-page-contact, .page-template-ppc-page {
     #banner-50 {
+        position: relative;
         &.margin-bottom-0 {
             margin-bottom: 0 !important;
         }
         .columns {
             align-items: flex-end !important;
             .column-50 {
+                position: relative;
+                z-index: 3;
                 &:first-of-type {
                     align-self: center;
+                }
+                .gform_wrapper {
+                    background: $dk-grey;
+                    padding: 40px !important;
+                    margin: 60px 60px 60px auto;
+                    max-width: 600px;
+                    width: auto;
+                    @include respond(tab-land) { 
+                        margin: 60px 30px 60px auto;
+                    }
+                    @include respond(tab-port) {
+                        max-width: 100%;
+                        margin: 0px auto 0px auto;
+                    }
+                    .gform_heading {
+                        display: none;
+                    }
+                    form {
+                        margin: 0 !important;
+                        textarea {
+                            min-block-size: 10rem;
+                        }
+                        input[type="submit"] {
+                            background: none !important;
+                            border: solid 2px $white !important;
+                            &:hover {
+                                background: $red !important;
+                                color: $white !important;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -125,6 +159,388 @@
             max-height: 700px;
             object-fit: cover;
             object-position: top !important;
+        }
+
+        &.has-banner-img {
+            position: relative;
+            .banner-img-wrap {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                &:before {
+                    content: "";
+                    background: #000;
+                    background: linear-gradient(102deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 48%, rgba(0, 0, 0, 0) 90%);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                }
+        
+                img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 80%;
+                    height: 100%;
+                    max-height: 100%;
+                    object-fit: cover;
+                    @include respond(tab-port) {
+                        height: 50%;
+                        width: 100%;
+                    }
+                    @include respond(phone) {
+                        height: 40%;
+                    }
+                }
+            }
+            .column-50 {
+                .container {
+                    @include respond(tab-land) {
+                        padding-left: 30px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-template-page-contact {
+    #banner-50 {
+        h1 {
+            font-family: $serif !important;
+            text-transform: uppercase;
+            font-weight: $light !important;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            margin-top: 60px;
+            font-size: 1.8rem !important;
+            color: $white !important;
+        }
+    
+        .subtitle {
+            font-size: 6rem !important;
+            font-weight: $black !important;
+            line-height: 100% !important;
+            font-family: $sans !important;
+            text-transform: capitalize !important;
+    
+            @include respond(desktop) {
+                font-size: 5rem !important;
+            }
+    
+            @include respond(phone) {
+                font-size: 4rem !important;
+            }
+        }
+    }
+    footer {
+        .footer-links {
+            margin-bottom: 30px;
+            .column-50 {
+                &:first-of-type {
+                    display: none;
+                }
+            }
+            .column-20 {
+                width: 40%;
+                flex-shrink: 1;
+            }
+            .column-33 {
+                width: 50%;
+                flex-shrink: 0;
+                .nav-wrapper {
+                    gap: 30px;
+                    .nav {
+                        &:nth-of-type(2) {
+                            nav ul {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                column-gap: 45px;
+                                @include respond(phone) {
+                                    grid-template-columns: 1fr;
+                                    column-gap: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-template-ppc-page {
+    position: relative;
+    top: -21px;
+    header {
+        position: absolute;
+        padding-top: 25px;
+        #header-top {
+            background: none !important;
+            ul.menu {
+                li:not(.nav-btn) {
+                    display: none !important;
+                }
+                @include respond(tab-land) {
+                    position: relative !important;
+                    left: unset !important;
+                    top: 0 !important;
+                    right: 0 !important;
+                    background: none !important;
+                    height: 50px;
+                    width: 125px;
+                    min-width: 125px !important;
+                    overflow: hidden !important;
+                    .nav-btn {
+                        height: auto;
+                        margin: 0 !important;
+                        left: unset !important; 
+                    }
+                }
+            }
+            #header-top_mobile {
+                display: none !important;
+            }
+
+        }
+    }
+    #banner-50.banner-50-form {
+        margin-top: 0 !important;
+        margin-bottom: 600px;
+        padding-top: 0 !important;
+        @include respond(tab-port) {
+            margin-bottom: 80px;
+        }
+        &.has-banner-img {
+            .banner-img-wrap {
+                img {
+                    @include respond(phone) {
+                        height: 26%;
+                    }
+                }
+            }
+        }
+        .columns {
+            flex-direction: column;
+            position: relative;
+        }
+        .content-block {
+            margin: 0 auto;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 !important;
+            height: 900px;
+            @include respond(desktop) {
+                width: 75%;
+            }
+            @include respond(tab-land) {
+                width: 100%;
+                padding: 0 60px !important;
+            }
+            @include respond(tab-port) {
+                height: 600px;
+            }
+            @include respond(phone) {
+                padding: 0 30px !important;
+                height: auto;
+            }
+            .container {
+                height: 100%;
+                padding-left: 0 !important;
+                @include respond(tab-land) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    top: -150px;
+                    gap: 50px;
+                    padding-right: 0;
+                }
+                @include respond(tab-port) {
+                    top: 0;
+                }
+                @include respond(phone) {
+                    gap: 30px;
+                    margin-top: 60px;
+                }
+            }
+            h1 {
+                font-family: $serif !important;
+                font-size: 1.6rem !important;
+                line-height: 135% !important;
+                letter-spacing: 4px !important;
+                text-transform: uppercase !important;
+                text-align: center;
+                padding-top: 50px;
+                margin-bottom: 0 !important;
+            }
+            .desktop-copy {
+                text-align: center;
+                font-size: 1.8rem !important;
+                line-height: 110%;
+                @include respond(phone) {
+                    display: none !important;
+                }
+            }
+            .large-subtitle {
+                padding-top: 225px;
+                position: relative;
+                font-size: 5.5rem !important;
+                text-align: center;
+                line-height: 105% !important;
+                font-weight: $bold;
+                @include respond(desktop-lg) {
+                    padding-top: 200px;
+                }
+                @include respond(tab-land) {
+                    padding-top: 0;
+                    margin-bottom: 0 !important;
+                }
+                @include respond(tab-port) {
+                    font-size: 4rem !important;
+                }
+                @include respond(phone) {
+                    font-size: 3rem !important;
+                    margin-bottom: 30px !important;
+                }
+            }
+        }
+        .banner-form {
+            margin: 0 auto;
+            position: absolute !important;
+            bottom: -400px;
+            width: 80%;
+            align-self: center;   
+            background: $dk-grey;
+            padding: 60px;
+            display: flex;
+            @include respond(tab-land) {
+                width: 100%;
+            }
+            @include respond(tab-port) {
+                position: relative !important;
+                bottom: 0;
+                flex-direction: column;
+            }
+            @include respond(phone) {
+                padding: 30px;
+            }
+            .copy-wrap {
+                width: 30%;
+                @include respond(tab-port) {
+                    width: 100%;
+                }
+                .large-copy {
+                    p {
+                        font-size: 3.5rem !important;
+                        line-height: 115% !important;
+                        font-weight: $bold;
+                        @include respond(tab-land) {
+                            font-size: 2.5rem !important;
+                        }
+                    }
+                }
+            }
+            .gform_wrapper {
+                max-width: 100% !important; 
+                width: 60% !important;
+                margin: 0 0 0 auto !important;
+                padding: 0 !important;
+                @include respond(tab-port) {
+                    width: 100% !important;
+                    margin-top: 30px !important;
+                }
+            }
+        }
+    }
+    .ppc-footer {
+        background: $dk-grey;
+        padding: 30px 60px;
+        @include respond(phone) {
+            padding: 30px;
+        }
+        .row-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            @include respond(phone) {
+                flex-direction: column;
+            }
+            a {
+                &:first-of-type {
+                    display: block;
+                    height: auto;
+                    max-height: 70px;
+                    width: 230px;
+                }
+                &:last-of-type {
+                    @include respond(phone) {
+                        margin-top: 20px;
+                        width: -webkit-fill-available;
+                        width: -moz-fill-available;
+                        width: fill-available;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .row-2 {
+            .gform_wrapper {
+                .gform_body {
+                    position: relative;
+                }
+                .ginput_container_textarea {
+                    width: 45%;
+                    @include respond(phone) {
+                        width: 100%;
+                    }
+                }
+                .gfield--type-checkbox {
+                    width: 45%;
+                    position: absolute;
+                    bottom: 100px;
+                    right: 0;
+                    @include respond(desktop) {
+                        bottom: 125px;
+                    }
+                    @include respond(phone) {
+                        width: 100%;
+                        position: relative;
+                        bottom: 0;
+                    }
+                }
+                .gfield--type-html {
+                    width: 45%;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    @include respond(tab-port) {
+                        bottom: -50px;
+                    }
+                    @include respond(phone) {
+                        width: 100%;
+                        position: relative;
+                        bottom: 0;
+                    }
+                }
+                input[type="submit"] {
+                    background: none !important;
+                    border: solid 2px $white !important;
+
+                    &:hover {
+                        background: $red !important;
+                        color: $white !important;
+                    }
+                }
+            }
         }
     }
 }
