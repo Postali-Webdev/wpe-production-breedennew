@@ -237,6 +237,24 @@
                 font-size: 4rem !important;
             }
         }
+        &.has-banner-img {
+            .banner-img-wrap {
+                &:before {
+                    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.33) 30%, rgba(0, 0, 0, 1) 69%);
+                    @include respond(tab-port) {
+                        background: linear-gradient(102deg, #000 0%, rgba(0, 0, 0, .7) 48%, transparent 90%);
+                    }
+                }
+                img {
+                    right: unset;
+                    left: 100px;
+                    @include respond(tab-port) {
+                        right: 0;
+                        left: unset;
+                    }
+                }   
+            }
+        }
     }
     footer {
         .footer-links {
