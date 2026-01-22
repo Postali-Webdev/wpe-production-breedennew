@@ -563,7 +563,7 @@
     }
 }
 
-.post-type-archive-reviews, .post-type-archive-videos {
+.post-type-archive-reviews, .post-type-archive-videos, .single-videos {
     .container:not(#header-top) {
         margin-bottom: 80px;
     }
@@ -632,6 +632,13 @@
         &.active-review {
             display: grid;
         }
+    }
+}
+
+.single-videos {
+    .video-block {
+        background: none !important;
+        box-shadow: none !important;
     }
 }
 
