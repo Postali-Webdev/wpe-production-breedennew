@@ -91,7 +91,7 @@ function postali_child_scripts() {
     wp_register_script('countup-scripts', get_stylesheet_directory_uri() . '/assets/js/jquery.countup.min.js',array('jquery'), null, true); 
     wp_register_script('waypoints-scripts', get_stylesheet_directory_uri() . '/assets/js/jquery.waypoints.min.js',array('jquery'), null, true); 
 
-    if( is_post_type_archive( ['reviews', 'videos'] ) ) {
+    if( is_post_type_archive( ['reviews', 'videos'] ) || is_singular('videos') ) {
         wp_enqueue_script('video-block-scripts');
         wp_enqueue_script('results-scripts');
     }
