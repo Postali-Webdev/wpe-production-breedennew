@@ -169,8 +169,11 @@
                                 align-items: center;
                                 .icon-chevron-right {
                                     pointer-events: none;
+
                                     &:before {
                                         color: $white !important;
+                                        content:">";
+                                        font-size: 24px !important;
                                     }
                                 }
                                 span {
