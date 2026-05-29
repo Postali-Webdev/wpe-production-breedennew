@@ -148,6 +148,12 @@ $gbp_url = get_field('global_gbp_url', 'options');
     </div>
 </div>
 
-<?php get_template_part('block', 'book-promo'); ?>
+<div class="columns">
+    <div class="column-full block">
+        <?php get_template_part('block', 'book-promo'); ?>
+    </div>
+</div>
+
+
 
 <?php get_footer(); ?>

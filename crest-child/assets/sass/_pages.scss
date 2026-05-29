@@ -56,7 +56,8 @@
             img {
                 max-width: 100%;
                 height: 100%;
-                object-fit: cover;
+                -o-object-fit: cover;
+                   object-fit: cover;
             }
         }
     }
@@ -76,6 +77,7 @@
         .columns {
             .column-50 {
                 &:first-of-type {
+                    position: -webkit-sticky;
                     position: sticky;
                     top: 160px;
                     @include respond(tab-port) {
@@ -90,13 +92,17 @@
             width: -webkit-fill-available;
             width: -moz-fill-available;
             height: auto !important;
-            object-fit: contain;
-            object-position: top;
+            -o-object-fit: contain;
+               object-fit: contain;
+            -o-object-position: top;
+               object-position: top;
     }
     .wp-block-column {
         img {
-            object-fit: cover;
-            object-position: top !important;
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: top !important;
+               object-position: top !important;
             height: 100% !important;
         }
     }
@@ -157,8 +163,10 @@
         }
         img {
             max-height: 700px;
-            object-fit: cover;
-            object-position: top !important;
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: top !important;
+               object-position: top !important;
         }
 
         &.has-banner-img {
@@ -188,7 +196,8 @@
                     width: 80%;
                     height: 100%;
                     max-height: 100%;
-                    object-fit: cover;
+                    -o-object-fit: cover;
+                       object-fit: cover;
                     @include respond(tab-port) {
                         height: 50%;
                         width: 100%;
@@ -278,10 +287,12 @@
                             nav ul {
                                 display: grid;
                                 grid-template-columns: repeat(2, 1fr);
-                                column-gap: 45px;
+                                -moz-column-gap: 45px;
+                                     column-gap: 45px;
                                 @include respond(phone) {
                                     grid-template-columns: 1fr;
-                                    column-gap: 0;
+                                    -moz-column-gap: 0;
+                                         column-gap: 0;
                                 }
                             }
                         }
@@ -504,6 +515,7 @@
                         margin-top: 20px;
                         width: -webkit-fill-available;
                         width: -moz-fill-available;
+                        width: -moz-available;
                         width: fill-available;
                         text-align: center;
                     }
@@ -655,11 +667,19 @@
                 &.img-block {
                     img {
                         @include respond(desktop) {
-                            object-position: right !important;
+                            -o-object-position: right !important;
+                               object-position: right !important;
                         }
                     }
                 }
             }
+        }
+    }
+
+    section {
+        .is-layout-flex {
+            display: flex;
+            flex-wrap: nowrap;
         }
     }
 }
@@ -749,8 +769,10 @@
                 img {
                     width: 100%;
                     height: 300px;
-                    object-fit: cover;
-                    object-position: center;
+                    -o-object-fit: cover;
+                       object-fit: cover;
+                    -o-object-position: center;
+                       object-position: center;
                 }
             }
             .copy-wrapper {
@@ -896,8 +918,10 @@
     }
     .global-prefooter-cta {
         img {
-            object-fit: cover;
-            object-position: top;
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: top;
+               object-position: top;
         }
     }
 }
