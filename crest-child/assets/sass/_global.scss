@@ -264,6 +264,11 @@ html, body {
     h2, p, a:not(.btn) {
         color: $white !important;
     }
+
+    .wp-block-columns-is-layout-flex {
+        flex-wrap: nowrap;
+    }
+
 }
 
 .pagination {

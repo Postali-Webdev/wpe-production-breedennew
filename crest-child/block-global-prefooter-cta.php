@@ -3,7 +3,7 @@
 <section class="global-prefooter-cta wp-block-group full-width align-edge desktop-padding-0 margin-bottom-0 has-background" style="background:linear-gradient(90deg,rgba(255,255,255,0) 17%,rgb(41,41,41) 46%)">
     <div class="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
         <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-3 wp-block-columns-is-layout-flex">
-            <div class="wp-block-column overlay-behind is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66%">
+            <div class="wp-block-column overlay-behind is-layout-flow wp-block-column-is-layout-flow" style="width:66%">
                 <?php if( $global_cta['left_column_image'] ) {
                     echo wp_get_attachment_image( $global_cta['left_column_image']['ID'], 'full', false, array( 'class' => 'wp-block-image size-full image-full extra-wide-img' ) );
                 }?>
