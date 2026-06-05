@@ -112,6 +112,28 @@
             margin: 0 !important;
         }
     }
+
+    .testimonials {
+        padding-top: 0;
+        
+        .testimonials-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+
+            @include respond(tab-land) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @include respond(phone) {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .page-template-interior-block-template, .page-template-page-contact, .page-template-ppc-page {
