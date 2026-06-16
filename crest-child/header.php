@@ -100,7 +100,15 @@ endif; ?>
 			<div id="header-top_right">
 				<div id="header-top_right_menu">
                     <nav>
-                    <?php
+                    <?php if(is_tree('2793')) { 
+
+                    $args = array(
+                        'container' => false,
+                        'theme_location' => "raleigh-nav"
+                    );
+                    wp_nav_menu( $args );
+
+                    } else {
 						$homepage_id = trim(get_option('page_on_front'));
 						$locations = get_field('locations', 'options');
 						$show_default_menu = true;
@@ -129,7 +137,7 @@ endif; ?>
 							);
 							wp_nav_menu( $args );
 						}
-                    ?>	
+                    } ?>		
                     </nav>
 					<div id="header-top_mobile" class="<?php echo $location_name_fixed; ?>">
 						<div id="menu-icon" class="toggle-nav">
