@@ -100,44 +100,52 @@ endif; ?>
 			<div id="header-top_right">
 				<div id="header-top_right_menu">
                     <nav>
-                    <?php if(is_tree('2793')) { 
+                    <?php 
+
+                    $current_post_id = get_the_ID();
+                    $current_post = get_post($current_post_id);
+
+                    // Get the top-level parent page ID
+                    $top_parent_id = $current_post_id;
+                    $parent_id = $current_post->post_parent;
+
+                    while ($parent_id != 0) {
+                        $top_parent_id = $parent_id;
+                        $parent_post = get_post($parent_id);
+                        $parent_id = $parent_post->post_parent;
+                    }
+
+                    // Get the location menus repeater from options
+                    $location_menus = get_field('location_menus', 'options');
+
+                    $menu_to_display = 'raleigh-nav'; // Default fallback
+
+                    if ($location_menus) {
+                        foreach ($location_menus as $location_menu_item) {
+                            $parent_page = $location_menu_item['parent_page'];
+                            
+                            // Handle if parent_page is a post object
+                            if (is_object($parent_page)) {
+                                $parent_page = $parent_page->ID;
+                            } elseif (is_array($parent_page)) {
+                                $parent_page = $parent_page['ID'];
+                            }
+                            
+                            // Check if current page or top-level parent matches
+                            if ($parent_page == $current_post_id || $parent_page == $top_parent_id) {
+                                $menu_to_display = $location_menu_item['location_menu'];
+                                break;
+                            }
+                        }
+                    }
 
                     $args = array(
                         'container' => false,
-                        'theme_location' => "raleigh-nav"
+                        'menu' => $menu_to_display
                     );
                     wp_nav_menu( $args );
 
-                    } else {
-						$homepage_id = trim(get_option('page_on_front'));
-						$locations = get_field('locations', 'options');
-						$show_default_menu = true;
-						foreach ( $locations as $location ) {
-							$location_page = $location['location_page'];
-							$location_name = strtolower($location['name']);
-                            $location_name_fixed = str_replace(' ', '-', $location_name);
-							$location_id = $location_page->ID;
-							
-							if( is_tree( $location_id ) ) {
-								
-								$args = array(
-									'container' => false,
-									'theme_location' => "$location_name_fixed-nav"
-								);
-								wp_nav_menu( $args );		
-								$show_default_menu = false;
-								break;
-							} 	
-						}
-
-						if( $show_default_menu ) {
-							$args = array(
-								'container' => false,
-								'theme_location' => "header-nav"
-							);
-							wp_nav_menu( $args );
-						}
-                    } ?>		
+                    ?>
                     </nav>
 					<div id="header-top_mobile" class="<?php echo $location_name_fixed; ?>">
 						<div id="menu-icon" class="toggle-nav">
