@@ -105,21 +105,31 @@ endif; ?>
                     $current_post_id = get_the_ID();
                     $current_post = get_post($current_post_id);
 
-                    // Get the top-level parent page ID
-                    $top_parent_id = $current_post_id;
-                    $parent_id = $current_post->post_parent;
-
-                    while ($parent_id != 0) {
-                        $top_parent_id = $parent_id;
-                        $parent_post = get_post($parent_id);
-                        $parent_id = $parent_post->post_parent;
-                    }
-
                     // Get the location menus repeater from options
                     $location_menus = get_field('location_menus', 'options');
 
-                    $menu_to_display = 'raleigh-nav'; // Default fallback
+                    $menu_to_display = 36; // Default fallback
 
+                    // Helper function to check if a page is in a parent's tree
+                    function is_page_in_parent_tree($page_id, $parent_id) {
+                        // Check if current page IS the parent
+                        if ($page_id == $parent_id) {
+                            return true;
+                        }
+                        
+                        // Check if current page is a child of the parent by walking up the hierarchy
+                        $check_parent = wp_get_post_parent_id($page_id);
+                        while ($check_parent != 0) {
+                            if ($check_parent == $parent_id) {
+                                return true;
+                            }
+                            $check_parent = wp_get_post_parent_id($check_parent);
+                        }
+                        
+                        return false;
+                    }
+
+                    // If we have location menus, find the matching one
                     if ($location_menus) {
                         foreach ($location_menus as $location_menu_item) {
                             $parent_page = $location_menu_item['parent_page'];
@@ -131,8 +141,8 @@ endif; ?>
                                 $parent_page = $parent_page['ID'];
                             }
                             
-                            // Check if current page or top-level parent matches
-                            if ($parent_page == $current_post_id || $parent_page == $top_parent_id) {
+                            // Check if current page is in this parent's tree
+                            if (is_page_in_parent_tree($current_post_id, $parent_page)) {
                                 $menu_to_display = $location_menu_item['location_menu'];
                                 break;
                             }
@@ -146,6 +156,9 @@ endif; ?>
                     wp_nav_menu( $args );
 
                     ?>
+
+                    <?php echo $menu_to_display;?>
+
                     </nav>
 					<div id="header-top_mobile" class="<?php echo $location_name_fixed; ?>">
 						<div id="menu-icon" class="toggle-nav">
