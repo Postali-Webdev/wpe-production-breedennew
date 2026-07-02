@@ -157,7 +157,6 @@ endif; ?>
 
                     ?>
 
-                    <?php echo $menu_to_display;?>
 
                     </nav>
 					<div id="header-top_mobile" class="<?php echo $location_name_fixed; ?>">

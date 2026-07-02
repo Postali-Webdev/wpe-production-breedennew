@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Interior Block
+ * Template Name: Book Download
  * @package Postali Crest Controller Theme
  * @author Postali LLC
  */
@@ -23,7 +23,9 @@ $featured_img = get_the_post_thumbnail();
 
 <div id="banner-50" class="<?php echo $featured_img ? 'has-banner-img ' : ''; echo $enable_banner_form ? 'banner-50-form' : '';  echo $margin_bottom_0 ? ' margin-bottom-0' : ''; ?>">
     <div class="columns">
-    
+        <?php if( $featured_img ) {
+        echo "<div class='banner-img-wrap'>{$featured_img}</div>";
+    } ?>
         <div class="column-50 block content-block">
             <div class="container">
                 <?php 
@@ -65,5 +67,22 @@ $featured_img = get_the_post_thumbnail();
         <?php echo $block_content; ?>
     </div>
 </div>
+
+
+<?php if(!is_page(718)) { ?>
+
+<div class="ppc-footer">
+    <div class="row-1">
+        <a href="/" class="custom-logo-link" rel="home">
+            <img fetchpriority="high" src="/wp-content/uploads/2025/03/Breeden-logo.svg" class="custom-logo" alt="Breeden Law Office Logo" decoding="async">
+        </a>
+        <a href="tel:<?php echo get_field('global_phone_number', 'options') ;?>" class="btn"><?php echo get_field('global_phone_number', 'options') ;?></a>
+    </div>
+    <div class="row-2">
+        <?php echo do_shortcode('[gravityform id="4" title="false"]'); ?>
+    </div>
+</div>
+
+<?php } ?>
 
 <?php get_footer(); ?>
