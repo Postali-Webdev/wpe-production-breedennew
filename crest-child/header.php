@@ -157,9 +157,8 @@ endif; ?>
 
                     ?>
 
-
                     </nav>
-					<div id="header-top_mobile" class="<?php echo $location_name_fixed; ?>">
+					<div id="header-top_mobile">
 						<div id="menu-icon" class="toggle-nav">
 							<span class="line line-1"></span>
 							<span class="line line-2"></span>

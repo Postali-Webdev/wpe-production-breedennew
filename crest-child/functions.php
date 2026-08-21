@@ -155,6 +155,55 @@ function postali_crest_register_acf_blocks() {
 }
 add_action( 'init', 'postali_crest_register_acf_blocks' );
 
+
+// Add Search Bar to Top Nav
+function mainmenu_navsearch($items, $args) {
+    $garner_menu_id = get_nav_menu_locations()['garner-nav'] ?? 0;
+    $angier_menu_id = get_nav_menu_locations()['angier-nav'] ?? 0;
+    $cary_menu_id = get_nav_menu_locations()['cary-nav'] ?? 0;
+    $raleigh_menu_id = get_nav_menu_locations()['raleigh-nav'] ?? 0;
+    $wake_forest_menu_id = get_nav_menu_locations()['wake-forest-nav'] ?? 0;
+    $smithfield_menu_id = get_nav_menu_locations()['smithfield-nav'] ?? 0;
+
+    $rendered_menu_id = is_object($args->menu) ? $args->menu->term_id : (int) $args->menu;
+
+    if (
+        $args->theme_location === 'garner-nav' || $rendered_menu_id === (int) $garner_menu_id ||
+        $args->theme_location === 'angier-nav' || $rendered_menu_id === (int) $angier_menu_id ||
+        $args->theme_location === 'cary-nav' || $rendered_menu_id === (int) $cary_menu_id ||
+        $args->theme_location === 'raleigh-nav' || $rendered_menu_id === (int) $raleigh_menu_id ||
+        $args->theme_location === 'wake-forest-nav' || $rendered_menu_id === (int) $wake_forest_menu_id ||
+        $args->theme_location === 'smithfield-nav' || $rendered_menu_id === (int) $smithfield_menu_id
+    ) {
+        ob_start();
+        ?>
+        <li class="menu-item menu-item-search search-holder">
+            <form class="navbar-form-search" role="search" method="get" action="/">
+                <div class="search-form-container hdn" id="search-input-container">
+                    <div class="search-input-group">
+                        <div class="form-group">
+                        <input text="search the website" type="text" name="s" placeholder="Search for..." id="search-input-5cab7fd94d469" value="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <button aria-label="search button" title="search the site" type="submit" class="btn btn-search" id="search-button"><span class="icon-search-icon" aria-hidden="true"></span></button>
+            </form>	
+        </li>
+        <li class="menu-item menu-item-mobile-btn">
+            <a href="tel:<?php the_field('phone_number', 'options'); ?>"><span><?php the_field('phone_number', 'options'); ?></span></a>
+        </li>
+
+        <?php
+        $new_items = ob_get_clean();
+
+        $items .= $new_items;
+        
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'mainmenu_navsearch', 10, 2);
+
+
 // Widget Logic Conditionals (ancestor)
 function is_tree( $pid ) {
     global $post;

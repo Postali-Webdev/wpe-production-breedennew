@@ -51,7 +51,17 @@ get_header(); ?>
                     <ul class="parent">
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                             <li>
-                                <a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                                <h2><?php echo get_the_title(); ?></h2>
+                                <?php
+                                $excerpt = str_replace(
+                                    'WHY CHOOSE BREEDEN LAW OFFICE: ',
+                                    '',
+                                    get_the_excerpt()
+                                );
+                                echo $excerpt;
+                                ?>
+                                <br><br>
+                                <a href="<?php echo get_permalink(); ?>" class="arrow-link">Read More</a>
                             </li>
                         <?php endwhile; ?>
                     </ul>

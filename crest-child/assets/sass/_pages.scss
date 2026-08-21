@@ -983,6 +983,19 @@
     }
 }
 
+.search-results {
+    ul.parent {
+        li {
+            border-bottom: 1px solid lightgray;
+            padding-bottom: 30px;
+
+            h2 {
+                font-size: 32px !important;
+            }
+        }
+    }
+}
+
 .search-results, .page-template-page-sitemap {
     .column-50 {
         &:first-of-type {
