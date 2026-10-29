@@ -22,6 +22,8 @@
         }
         .mobile-banner-img {
             display: none;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
             width: fit-content;
             height: auto;
             margin: 0 auto;
@@ -37,14 +39,15 @@
                 @include respond(phone) {
                     height: auto;
                     width: auto;
-                    object-fit: cover;
+                    -o-object-fit: cover;
+                       object-fit: cover;
                 }
                 
             }
         }    
         .column-50 {
             @media screen and (min-width: 1700px ) {
-                width: 80%;
+                width: 75%;
                 left: -10%;
                 margin-top: 50px;
             }
@@ -95,27 +98,34 @@
                 width: auto;
                 height: 100%;
                 max-height: 900px;
-                object-fit: contain;
+                -o-object-fit: contain;
+                   object-fit: contain;
                 position: absolute;
                 top: 0;
                 right: 0;
                 @include respond(desktop-lg) {
-                    object-fit: cover;
-                    object-position: 125px;
+                    -o-object-fit: cover;
+                       object-fit: cover;
+                    -o-object-position: 125px;
+                       object-position: 125px;
                 }
                 @include respond(desktop) {
-                    object-position: 195px;
+                    -o-object-position: 195px;
+                       object-position: 195px;
                 }
             }
             &.reverse {
                 img {
                     transform: scaleX(-1);
-                    object-position: -100px;
+                    -o-object-position: -100px;
+                       object-position: -100px;
                     @include respond(desktop-lg) {
-                        object-position: -200px;
+                        -o-object-position: -200px;
+                           object-position: -200px;
                     }
                     @include respond(desktop) {
-                        object-position: -200px;
+                        -o-object-position: -200px;
+                           object-position: -200px;
                     }
                 }
             }
@@ -165,6 +175,8 @@
                 gap: 30px;
                 padding: 20px 30px;
                 background: $white;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
                 width: fit-content;
 
                 @include respond(phone) {
@@ -176,7 +188,8 @@
                 .img-wrap {
                     img {
                         max-width: 120px;
-                        object-fit: contain;
+                        -o-object-fit: contain;
+                           object-fit: contain;
                     }
                 }
 
